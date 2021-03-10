@@ -1,0 +1,64 @@
+﻿@model SecondPostgreSqlTable.Models.CarsModel
+
+@{
+    ViewData["Title"] = "Өзгерту";
+}
+
+<h1>Өзгерту</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Tm" class="control-label"></label>
+                <input asp-for="Tm" class="form-control" />
+                <span asp-validation-for="Tm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="V" class="control-label"></label>
+                <input asp-for="V" class="form-control" />
+                <span asp-validation-for="V" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VN" class="control-label"></label>
+                <input asp-for="VN" class="form-control" />
+                <span asp-validation-for="VN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cf" class="control-label"></label>
+                <input asp-for="Cf" class="form-control" />
+                <span asp-validation-for="Cf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VT" class="control-label"></label>
+                <input asp-for="VT" class="form-control" />
+                <span asp-validation-for="VT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img" class="control-label"></label>
+                <input asp-for="Img" class="form-control" />
+                <span asp-validation-for="Img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FImg" class="control-label"></label>
+                <input asp-for="FImg" class="form-control" />
+                <span asp-validation-for="FImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сақтау" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Артқа</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

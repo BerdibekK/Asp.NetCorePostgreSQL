@@ -1,0 +1,72 @@
+﻿@model IEnumerable<SecondPostgreSqlTable.Models.CarsModel>
+
+@{
+    ViewData["Title"] = "Көліктер базасы";
+}
+
+<h1>Көліктер базасы</h1>
+
+<p>
+    <a asp-action="Create">Жаңа</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.V)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FImg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.V)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Img)
+            </td>
+            <td>
+                <!--@Html.DisplayFor(modelItem => item.FImg)-->
+                <img src="~/CImages/@item.FImg.Trim()" width="101" />
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Өзгерту</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Толығырақ</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Өшіру</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
